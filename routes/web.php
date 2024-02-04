@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PromotionController;
+use App\Models\Promotion; 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\WelcomeController;
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/home', function () {
+    $promotions = Promotion::all(); 
+
+    return view('home', compact('promotions'));
+})->name('home');
+
+
+Route::resource('promotions', PromotionController::class);
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard.index');
+//     })->name('dashboard');
+// });
+
+Route::get('/analytics', 'AnalyticsController@index')->name('analytics.index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
+
