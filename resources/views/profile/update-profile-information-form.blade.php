@@ -1,3 +1,4 @@
+<div class="bg-[#eae5d5]">
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}
@@ -93,3 +94,4 @@
         </x-button>
     </x-slot>
 </x-form-section>
+</div>

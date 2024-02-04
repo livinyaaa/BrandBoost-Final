@@ -33,7 +33,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main style="background-color: #eae5d5">
                 @yield('content')
             </main>
         </div>
