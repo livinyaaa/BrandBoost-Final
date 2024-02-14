@@ -5,6 +5,7 @@ use App\Http\Controllers\PromotionController;
 use App\Models\Promotion; 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\DiscoverBusinessController;
 
 
 
@@ -45,5 +46,6 @@ Route::resource('promotions', PromotionController::class);
 Route::get('/analytics', 'AnalyticsController@index')->name('analytics.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/discover-businesses', [DiscoverBusinessController::class, 'index'])->name('discover-businesses.index');
 
 

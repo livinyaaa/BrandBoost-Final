@@ -21,6 +21,9 @@
                     <x-nav-link href="{{ route('promotions.index') }}" :active="request()->routeIs('promotions.*')">
                         {{ __('My Promotions') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('discover-businesses.index') }}" :active="request()->routeIs('discover-businesses.*')">
+                        {{ __('Discover Businesses') }}
+                    </x-nav-link>
                 </div>
             </div>
 
